@@ -5,19 +5,16 @@
   left: 0;
   width: 100%;
   background: rgba(255,255,255,0.95);
-  padding: 6px 14px;
+  padding: 12px 16px;       /* Increase padding if header is taller */
   z-index: 9999;
   border-bottom: 1px solid #ccc;
   text-align: center;
-  font-size: 1rem;
+  font-size: 2rem;           /* Adjust text size */
   font-weight: bold;
+  box-sizing: border-box;    /* ensures padding is included in height */
 }
 
-  /* Increase text size */
-  font-size: 2rem;  /* Change this value as needed */
-}
-
-/* Push document content down so header doesn’t overlap */
+/* Push document content down so it is not hidden behind the header */
 body {
-  padding-top: 48px;
+  padding-top: calc(3rem + 24px); /* font-size + padding top+bottom */
 }

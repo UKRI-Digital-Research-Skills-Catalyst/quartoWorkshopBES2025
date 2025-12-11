@@ -15,7 +15,7 @@ bibliography: references.bib
 ---
 
 ::: top-header
-https://example.com/my-workshop-page
+https://tinyurl.com/QuartoBES
 :::
 
 # Housekeeping
