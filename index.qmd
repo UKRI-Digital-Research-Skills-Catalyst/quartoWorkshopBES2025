@@ -81,10 +81,10 @@ to whichever format the journal requires.
 
 These are all the **same** `.qmd` document, just with different outputs:
 
--   HTML
+-   [HTML](index.html)
 -   PDF
--   Word document
--   Revealjs slide deck
+-   [Word document](docx.docx)
+-   [Revealjs slide deck](revealjs.html)
 
 # Markdown Basics
 
