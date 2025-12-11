@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Reporting with Quarto"
+title: "Reproducible and Automated Reporting with Quarto"
 author: "Pasky Miranda"
 format:
   html:
@@ -7,6 +7,13 @@ format:
     toc-location: right
     theme: Yeti
     css: header.css
+    output-file: "index.html"
+  revealjs:
+    theme: simple
+    slide-number: true
+    output-file: "revealjs.html"
+  docx: 
+    output-file: "docx.docx"
 engine: knitr
 editor: 
   markdown: 
@@ -22,7 +29,7 @@ https://tinyurl.com/QuartoBES
 
 This tutorial is available as a webpage here: [github](https://ukri-digital-research-skills-catalyst.github.io/quartoWorkshopBES2025).\
 If you don't have R Studio installed or working, no problem! It's also
-available as a positcloud instance: [positcloud](positcloudlink.com).
+available as a positcloud instance: [positcloud](https://posit.cloud/content/11607987).
 
 If you see this emoji 🎬 then it's an instruction to do something.
 
@@ -63,22 +70,21 @@ Typical write-up workflow:
 With Quarto you don't have to worry about any of these. It does the work
 for you!
 
-# Publishing
+## Publishing
 
 To address the reproducibility crisis journals now increasingly want you
 to have your code/workbook submitted with the manuscript. Working in
 Quarto allows you have all of that all in one place, readily exportable
 to whichever format the journal requires.
 
-# Demo: Multiple Formats
+## Demo: Multiple Formats
 
-**Same `.qmd`**, different output:
+These are all the **same** `.qmd` document, just with different outputs:
 
--   HTML report
+-   HTML
 -   PDF
 -   Word document
--   revealjs slides
--   Manuscript templates
+-   Revealjs slide deck
 
 # Markdown Basics
 
@@ -90,8 +96,6 @@ to whichever format the journal requires.
 -   You can run code chunk interactively or through rendering
 -   Comments: `|#`, `#` in code chunks, `<!-- in text -->` but use
     Ctrl+Shift+C
-
-# Markdown foundations
 
 ## Text Formatting
 
@@ -189,7 +193,7 @@ maths. For example:
 
 # Create a QMD Document
 
-Let's create a Quarto Document (a .qmd file) in RStudio!
+Let's create a Quarto Document (a `.qmd` file) in RStudio!
 
 🎬 Go to File \> New File \> New Quarto Document\
 🎬 Give your file a name\
@@ -200,7 +204,7 @@ first)\
 
 You'll see the Rendered default document in the Viewer panel.
 
-### Some recommended RStudio settings
+## Some recommended RStudio settings
 
 🎬 Tools \> Global Options\
 - General:\
@@ -210,7 +214,7 @@ You'll see the Rendered default document in the Viewer panel.
 
 ## Edit the YAML
 
-As mentioned before, the YAML determines of the settings of the qmd
+As mentioned before, the YAML determines of the settings of the `.qmd`
 document. It is defined between `---` at the top of the document.
 
 The default YAML header will look a bit like this:
@@ -282,9 +286,9 @@ lengthy with larger documents or datasets).
 
 Let's now try loading in some real data.
 
-🎬 Make a folder called `data-raw`\
-🎬 Save [chaff.txt](data-raw/chaff.txt) to `data-raw`\ 
-🎬 Add the following code chunk and run it:\
+🎬 Make a folder called `data-raw` \
+🎬 Save [chaff.txt](data-raw/chaff.txt) to `data-raw` \
+🎬 Add the following code chunk and run it: \
 
 ```{r}
 #| echo: fenced
@@ -532,6 +536,17 @@ You can also add citations to the .bib file manually.
     and cross-referenced using labels (e.g., fig-, tbl-).
 -   You can include citations and bibliographic references directly
     within your document.
+    
+# What Else Can I Do?
+- Alter the formatting of your content with to create [panel figure](https://quarto.org/docs/authoring/figures.html#figure-panels) or [change figure legend locations](https://quarto.org/docs/authoring/figures.html#caption-locations) 
+- Make a [website](https://quarto.org/docs/websites/) with multiple pages\
+- Make a [presentation](https://quarto.org/docs/presentations/) in visualjs, pptx, or pdf format\
+- Make a [dashboard](https://quarto.org/docs/dashboards/) for interactive and informative data reporting\
+- Create a [manuscript](https://quarto.org/docs/manuscripts/index.html) for publication-ready papers
+- Integrate Google Sheets, create a book, embed interactive maps and lots, lots more! Check out the [Quarto guide](https://quarto.org/docs/guide/) to find out more (and maybe get some inspiration!)
+
+**Good luck on your Quarto adventures!**
+
 
 Pages made with R [@base], Quarto [@allaire2022], knitr [@knitr],
 kableExtra [@kableExtra]

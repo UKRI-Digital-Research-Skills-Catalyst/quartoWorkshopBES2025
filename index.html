@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.6.39" />
 
-<meta name="author" content="Pasky Miranda">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-<title>Reproducible Reporting with Quarto</title>
+<meta name="author" content="Pasky Miranda" />
+
+<title>Reproducible and Automated Reporting with Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,17 +79,7 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-528bf9ffa6be439cf0763131be0fb121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<!-- htmldependencies:E3FAD763 -->
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -119,68 +111,20 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="header.css" />
 </head>
 
 <body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#housekeeping" id="toc-housekeeping" class="nav-link active" data-scroll-target="#housekeeping">Housekeeping</a></li>
-  <li><a href="#what-youll-learn-today" id="toc-what-youll-learn-today" class="nav-link" data-scroll-target="#what-youll-learn-today">What You’ll Learn Today</a></li>
-  <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto">What is Quarto?</a></li>
-  <li><a href="#why-use-quarto" id="toc-why-use-quarto" class="nav-link" data-scroll-target="#why-use-quarto">Why Use Quarto?</a></li>
-  <li><a href="#publishing" id="toc-publishing" class="nav-link" data-scroll-target="#publishing">Publishing</a></li>
-  <li><a href="#demo-multiple-formats" id="toc-demo-multiple-formats" class="nav-link" data-scroll-target="#demo-multiple-formats">Demo: Multiple Formats</a></li>
-  <li><a href="#markdown-basics" id="toc-markdown-basics" class="nav-link" data-scroll-target="#markdown-basics">Markdown Basics</a></li>
-  <li><a href="#markdown-foundations" id="toc-markdown-foundations" class="nav-link" data-scroll-target="#markdown-foundations">Markdown foundations</a>
-  <ul class="collapse">
-  <li><a href="#text-formatting" id="toc-text-formatting" class="nav-link" data-scroll-target="#text-formatting">Text Formatting</a></li>
-  <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings">Headings</a>
-  <ul class="collapse">
-  <li><a href="#links-images" id="toc-links-images" class="nav-link" data-scroll-target="#links-images">Links &amp; Images</a></li>
-  </ul></li>
-  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations">Equations</a></li>
-  </ul></li>
-  <li><a href="#create-a-qmd-document" id="toc-create-a-qmd-document" class="nav-link" data-scroll-target="#create-a-qmd-document">Create a QMD Document</a>
-  <ul class="collapse">
-  <li><a href="#some-recommended-rstudio-settings" id="toc-some-recommended-rstudio-settings" class="nav-link" data-scroll-target="#some-recommended-rstudio-settings">Some recommended RStudio settings</a></li>
-  <li><a href="#edit-the-yaml" id="toc-edit-the-yaml" class="nav-link" data-scroll-target="#edit-the-yaml">Edit the YAML</a></li>
-  <li><a href="#adding-basic-content" id="toc-adding-basic-content" class="nav-link" data-scroll-target="#adding-basic-content">Adding basic content</a></li>
-  <li><a href="#loading-in-packages" id="toc-loading-in-packages" class="nav-link" data-scroll-target="#loading-in-packages">Loading in packages</a></li>
-  <li><a href="#loading-in-data" id="toc-loading-in-data" class="nav-link" data-scroll-target="#loading-in-data">Loading in Data</a></li>
-  <li><a href="#data-summary" id="toc-data-summary" class="nav-link" data-scroll-target="#data-summary">Data Summary</a></li>
-  <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline Code</a></li>
-  </ul></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a>
-  <ul class="collapse">
-  <li><a href="#cross-referencing-figures" id="toc-cross-referencing-figures" class="nav-link" data-scroll-target="#cross-referencing-figures">Cross-referencing Figures</a></li>
-  <li><a href="#figure-legends" id="toc-figure-legends" class="nav-link" data-scroll-target="#figure-legends">Figure legends</a></li>
-  </ul></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a>
-  <ul class="collapse">
-  <li><a href="#crossreferencing-tables" id="toc-crossreferencing-tables" class="nav-link" data-scroll-target="#crossreferencing-tables">Crossreferencing Tables</a></li>
-  <li><a href="#tables---improve-format" id="toc-tables---improve-format" class="nav-link" data-scroll-target="#tables---improve-format">Tables - improve format</a></li>
-  </ul></li>
-  <li><a href="#the-visual-editor" id="toc-the-visual-editor" class="nav-link" data-scroll-target="#the-visual-editor">The visual editor!</a></li>
-  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a>
-  <ul class="collapse">
-  <li><a href="#package-citations" id="toc-package-citations" class="nav-link" data-scroll-target="#package-citations">Package citations</a></li>
-  <li><a href="#citations-from-doi" id="toc-citations-from-doi" class="nav-link" data-scroll-target="#citations-from-doi">Citations from DOI</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  </ul>
-</nav>
+  <div id="quarto-toc-target"></div>
 </div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reproducible Reporting with Quarto</h1>
+<h1 class="title">Reproducible and Automated Reporting with Quarto</h1>
 </div>
 
 
@@ -202,14 +146,64 @@ window.Quarto = {
 
 </header>
 
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#housekeeping" id="toc-housekeeping">Housekeeping</a></li>
+  <li><a href="#what-youll-learn-today" id="toc-what-youll-learn-today">What You’ll Learn Today</a></li>
+  <li><a href="#what-is-quarto" id="toc-what-is-quarto">What is Quarto?</a></li>
+  <li><a href="#why-use-quarto" id="toc-why-use-quarto">Why Use Quarto?</a>
+  <ul>
+  <li><a href="#publishing" id="toc-publishing">Publishing</a></li>
+  <li><a href="#demo-multiple-formats" id="toc-demo-multiple-formats">Demo: Multiple Formats</a></li>
+  </ul></li>
+  <li><a href="#markdown-basics" id="toc-markdown-basics">Markdown Basics</a>
+  <ul>
+  <li><a href="#text-formatting" id="toc-text-formatting">Text Formatting</a></li>
+  <li><a href="#headings" id="toc-headings">Headings</a>
+  <ul>
+  <li><a href="#links-images" id="toc-links-images">Links &amp; Images</a></li>
+  </ul></li>
+  <li><a href="#equations" id="toc-equations">Equations</a></li>
+  </ul></li>
+  <li><a href="#create-a-qmd-document" id="toc-create-a-qmd-document">Create a QMD Document</a>
+  <ul>
+  <li><a href="#some-recommended-rstudio-settings" id="toc-some-recommended-rstudio-settings">Some recommended RStudio settings</a></li>
+  <li><a href="#edit-the-yaml" id="toc-edit-the-yaml">Edit the YAML</a></li>
+  <li><a href="#adding-basic-content" id="toc-adding-basic-content">Adding basic content</a></li>
+  <li><a href="#loading-in-packages" id="toc-loading-in-packages">Loading in packages</a></li>
+  <li><a href="#loading-in-data" id="toc-loading-in-data">Loading in Data</a></li>
+  <li><a href="#data-summary" id="toc-data-summary">Data Summary</a></li>
+  <li><a href="#inline-code" id="toc-inline-code">Inline Code</a></li>
+  </ul></li>
+  <li><a href="#figures" id="toc-figures">Figures</a>
+  <ul>
+  <li><a href="#cross-referencing-figures" id="toc-cross-referencing-figures">Cross-referencing Figures</a></li>
+  <li><a href="#figure-legends" id="toc-figure-legends">Figure legends</a></li>
+  </ul></li>
+  <li><a href="#tables" id="toc-tables">Tables</a>
+  <ul>
+  <li><a href="#crossreferencing-tables" id="toc-crossreferencing-tables">Crossreferencing Tables</a></li>
+  <li><a href="#tables---improve-format" id="toc-tables---improve-format">Tables - improve format</a></li>
+  </ul></li>
+  <li><a href="#the-visual-editor" id="toc-the-visual-editor">The visual editor!</a></li>
+  <li><a href="#citations" id="toc-citations">Citations</a>
+  <ul>
+  <li><a href="#package-citations" id="toc-package-citations">Package citations</a></li>
+  <li><a href="#citations-from-doi" id="toc-citations-from-doi">Citations from DOI</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary">Summary</a></li>
+  <li><a href="#what-else-can-i-do" id="toc-what-else-can-i-do">What Else Can I Do?</a></li>
+  </ul>
+</nav>
 <div class="top-header">
 <p>https://tinyurl.com/QuartoBES</p>
 </div>
 <section id="housekeeping" class="level1">
 <h1>Housekeeping</h1>
-<p>This tutorial is available as a webpage here: <a href="https://ukri-digital-research-skills-catalyst.github.io/quartoWorkshopBES2025">github</a>.<br>
-If you don’t have R Studio installed or working, no problem! It’s also available as a positcloud instance: <a href="positcloudlink.com">positcloud</a>.</p>
+<p>This tutorial is available as a webpage here: <a href="https://ukri-digital-research-skills-catalyst.github.io/quartoWorkshopBES2025">github</a>.<br />
+If you don’t have R Studio installed or working, no problem! It’s also available as a positcloud instance: <a href="https://posit.cloud/content/11607987">positcloud</a>.</p>
 <p>If you see this emoji 🎬 then it’s an instruction to do something.</p>
 </section>
 <section id="what-youll-learn-today" class="level1">
@@ -248,21 +242,21 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 <li>Lots of potential for errors</li>
 </ul>
 <p>With Quarto you don’t have to worry about any of these. It does the work for you!</p>
-</section>
-<section id="publishing" class="level1">
-<h1>Publishing</h1>
+<section id="publishing" class="level2">
+<h2>Publishing</h2>
 <p>To address the reproducibility crisis journals now increasingly want you to have your code/workbook submitted with the manuscript. Working in Quarto allows you have all of that all in one place, readily exportable to whichever format the journal requires.</p>
 </section>
-<section id="demo-multiple-formats" class="level1">
-<h1>Demo: Multiple Formats</h1>
-<p><strong>Same <code>.qmd</code></strong>, different output:</p>
+<section id="demo-multiple-formats" class="level2">
+<h2>Demo: Multiple Formats</h2>
+<p>These are all the <strong>same</strong> <code>.qmd</code> document, just with different outputs:</p>
 <ul>
-<li>HTML report</li>
+<li>HTML</li>
 <li>PDF</li>
 <li>Word document</li>
 <li>revealjs slides</li>
 <li>Manuscript templates</li>
 </ul>
+</section>
 </section>
 <section id="markdown-basics" class="level1">
 <h1>Markdown Basics</h1>
@@ -272,15 +266,12 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 <li>You can run code chunk interactively or through rendering</li>
 <li>Comments: <code>|#</code>, <code>#</code> in code chunks, <code>&lt;!-- in text --&gt;</code> but use Ctrl+Shift+C</li>
 </ul>
-</section>
-<section id="markdown-foundations" class="level1">
-<h1>Markdown foundations</h1>
 <section id="text-formatting" class="level2">
-<h2 class="anchored" data-anchor-id="text-formatting">Text Formatting</h2>
-<table class="caption-top table">
+<h2>Text Formatting</h2>
+<table class="caption-top" style="width:58%;">
 <colgroup>
-<col style="width: 29%">
-<col style="width: 29%">
+<col style="width: 29%" />
+<col style="width: 29%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -290,39 +281,39 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>*italics*,**bold**</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>*italics*,**bold**</span></code></pre></div></td>
 <td><em>italics</em>, <strong>bold</strong></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>*</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>**bold italics ***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>*</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>**bold italics ***</span></code></pre></div></td>
 <td><strong><em>bold italics</em></strong></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>superscript^2^</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>superscript^2^</span></code></pre></div></td>
 <td>superscript<sup>2</sup></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>subscript~2~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>subscript~2~</span></code></pre></div></td>
 <td>subscript<sub>2</sub></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>~~strikethrough~~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>~~strikethrough~~</span></code></pre></div></td>
 <td><del>strikethrough</del></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">`verbatim code`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">`verbatim code`</span></span></code></pre></div></td>
 <td><code>verbatim code</code></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="headings" class="level2">
-<h2 class="anchored" data-anchor-id="headings">Headings</h2>
-<table class="caption-top table">
+<h2>Headings</h2>
+<table class="caption-top" style="width:44%;">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 22%">
+<col style="width: 22%" />
+<col style="width: 22%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -332,26 +323,26 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Header 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Header 1</span></span></code></pre></div></td>
 <td><h1 id="header-1">Header 1</h1></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Header 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h2 id="header-2" class="anchored">Header 2</h2></td>
+<td><div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Header 2</span></span></code></pre></div></td>
+<td><h2 id="header-2">Header 2</h2></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Header 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h3 id="header-3" class="anchored">Header 3</h3></td>
+<td><div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Header 3</span></span></code></pre></div></td>
+<td><h3 id="header-3">Header 3</h3></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Header 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h4 id="header-4" class="anchored">Header 4</h4></td>
+<td><div class="sourceCode" id="cb10"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Header 4</span></span></code></pre></div></td>
+<td><h4 id="header-4">Header 4</h4></td>
 </tr>
 </tbody>
 </table>
 <section id="links-images" class="level3">
-<h3 class="anchored" data-anchor-id="links-images">Links &amp; Images</h3>
-<table class="caption-top table">
+<h3>Links &amp; Images</h3>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Markdown Syntax</th>
@@ -360,18 +351,18 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>[Quar</span>
+<td><div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>[Quar</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>t</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>o](https://quarto.org)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>o](https://quarto.org)</span></code></pre></div></td>
 <td><a href="https://quarto.org">Quarto</a></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Caption</span><span class="co">]</span></span>
+<td><div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Caption</span><span class="co">]</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">    (images/chaff.jpg)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">    (images/chaff.jpg)</span></span></code></pre></div></td>
 <td><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/chaff.jpg" class="img-fluid figure-img"></p>
+<figure>
+<p><img src="images/chaff.jpg" class="img-fluid" /></p>
 <figcaption>Caption</figcaption>
 </figure>
 </div></td>
@@ -381,12 +372,12 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </section>
 </section>
 <section id="equations" class="level2">
-<h2 class="anchored" data-anchor-id="equations">Equations</h2>
+<h2>Equations</h2>
 <p>Use <code>$</code> delimiters for inline maths and <code>$$</code> delimiters for display maths. For example:</p>
-<table class="caption-top table">
+<table class="caption-top" style="width:72%;">
 <colgroup>
-<col style="width: 36%">
-<col style="width: 36%">
+<col style="width: 36%" />
+<col style="width: 36%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -396,16 +387,16 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<td><div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>in</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>l</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>ine maths: $E = mc^{2}$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>ine maths: $E = mc^{2}$</span></code></pre></div></td>
 <td>inline maths: <span class="math inline">\(E=mc^{2}\)</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="an">display maths:</span></span>
+<td><div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="an">display maths:</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>$$E = mc^{2}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>$$E = mc^{2}$$</span></code></pre></div></td>
 <td><p>display maths:</p>
 <p><span class="math display">\[E = mc^{2}\]</span></p></td>
 </tr>
@@ -415,33 +406,33 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </section>
 <section id="create-a-qmd-document" class="level1">
 <h1>Create a QMD Document</h1>
-<p>Let’s create a Quarto Document (a .qmd file) in RStudio!</p>
-<p>🎬 Go to File &gt; New File &gt; New Quarto Document<br>
-🎬 Give your file a name<br>
-🎬 Choose Engine: Knitr<br>
-🎬 Turn off Visual Editor (for now! We’ll learn to use Source editor first)<br>
-🎬 Now hit Render (or Ctrl+Shift+K).<br>
+<p>Let’s create a Quarto Document (a <code>.qmd</code> file) in RStudio!</p>
+<p>🎬 Go to File &gt; New File &gt; New Quarto Document<br />
+🎬 Give your file a name<br />
+🎬 Choose Engine: Knitr<br />
+🎬 Turn off Visual Editor (for now! We’ll learn to use Source editor first)<br />
+🎬 Now hit Render (or Ctrl+Shift+K).<br />
 </p>
 <p>You’ll see the Rendered default document in the Viewer panel.</p>
-<section id="some-recommended-rstudio-settings" class="level3">
-<h3 class="anchored" data-anchor-id="some-recommended-rstudio-settings">Some recommended RStudio settings</h3>
-<p>🎬 Tools &gt; Global Options<br>
-- General:<br>
-- Turn off the three “Restore ….” options<br>
-- Turn “Save workspace to .RData on exit” to Never - R Markdown:<br>
-- Turn “Show output preview in:” to Viewer pane<br>
+<section id="some-recommended-rstudio-settings" class="level2">
+<h2>Some recommended RStudio settings</h2>
+<p>🎬 Tools &gt; Global Options<br />
+- General:<br />
+- Turn off the three “Restore ….” options<br />
+- Turn “Save workspace to .RData on exit” to Never - R Markdown:<br />
+- Turn “Show output preview in:” to Viewer pane<br />
 </p>
 </section>
 <section id="edit-the-yaml" class="level2">
-<h2 class="anchored" data-anchor-id="edit-the-yaml">Edit the YAML</h2>
-<p>As mentioned before, the YAML determines of the settings of the qmd document. It is defined between <code>---</code> at the top of the document.</p>
+<h2>Edit the YAML</h2>
+<p>As mentioned before, the YAML determines of the settings of the <code>.qmd</code> document. It is defined between <code>---</code> at the top of the document.</p>
 <p>The default YAML header will look a bit like this:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"BES2025 Quarto"</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Santa Claus"</span></span>
+<div class="sourceCode" id="cb15"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;BES2025 Quarto&quot;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Santa Claus&quot;</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>🎬 Feel free to edit this. Try making your own title and add yourself as the author.</p>
 <p>Deafult code chunk options can also be determined in the YAML:</p>
 <ul>
@@ -452,23 +443,23 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 <li><code>warning: false</code></li>
 </ul>
 <p>YAMLs can be saved as separate .YAML files and then pointed to by individual Quarto documents like so:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> settings.yaml</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>Useful if you want the same formatting for multiple documents!</p>
 </section>
 <section id="adding-basic-content" class="level2">
-<h2 class="anchored" data-anchor-id="adding-basic-content">Adding basic content</h2>
+<h2>Adding basic content</h2>
 <p>🎬 Add the code chunk below (Ctrl-Shift-I) for a simple graph, and then hit Render (Ctrl-Shift-K)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode markdown cell-code"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="in">hist(rnorm(100))</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<figure>
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672" /></p>
 </figure>
 </div>
 </div>
@@ -476,14 +467,14 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 <p>Congratulations! You’ve created your first Quarto content!</p>
 </section>
 <section id="loading-in-packages" class="level2">
-<h2 class="anchored" data-anchor-id="loading-in-packages">Loading in packages</h2>
+<h2>Loading in packages</h2>
 <p>Let’s try loading in an R package, in this case tidyverse <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span>.</p>
 <p>🎬 Add this code chunk for package loading:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode markdown cell-code"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: load-packages</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
@@ -501,17 +492,18 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 <p>We can run individual code chunks in the R editor. This is useful for troubleshooting R code without having to Render every time (which can be lengthy with larger documents or datasets).</p>
 </section>
 <section id="loading-in-data" class="level2">
-<h2 class="anchored" data-anchor-id="loading-in-data">Loading in Data</h2>
+<h2>Loading in Data</h2>
 <p>Let’s now try loading in some real data.</p>
-<p>🎬 Make a folder called <code>data-raw</code><br>
-🎬 Save <a href="data-raw/chaff.txt">chaff.txt</a> to <code>data-raw</code>&nbsp; 🎬 Add the following code chunk and run it:<br>
+<p>🎬 Make a folder called <code>data-raw</code><br />
+🎬 Save <a href="data-raw/chaff.txt">chaff.txt</a> to <code>data-raw</code><br />
+🎬 Add the following code chunk and run it:<br />
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode markdown cell-code"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: import-data</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="in">file &lt;- "data-raw/chaff.txt"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="in">file &lt;- &quot;data-raw/chaff.txt&quot;</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="in">chaff &lt;- read_table(file)</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 ── Column specification ────────────────────────────────────────────────────────
@@ -524,10 +516,10 @@ cols(
 <p>The data is loaded into R now. Let’s now add a code chunk to summarise the dataset.</p>
 </section>
 <section id="data-summary" class="level2">
-<h2 class="anchored" data-anchor-id="data-summary">Data Summary</h2>
+<h2>Data Summary</h2>
 <p>🎬 Add this data summarisation chunk and run it</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb22"><pre class="sourceCode markdown cell-code"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: data-summary</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="in">chaff_summary &lt;- chaff |&gt; </span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(subspecies) |&gt;  </span></span>
@@ -535,12 +527,12 @@ cols(
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="in">            sd = sd(mass, na.rm = TRUE),</span></span>
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="in">            n = length(mass),</span></span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="in">            se = sd / sqrt(n))</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 <p>Our data is now summarised and ready to be reported in the text.</p>
 </section>
 <section id="inline-code" class="level2">
-<h2 class="anchored" data-anchor-id="inline-code">Inline Code</h2>
+<h2>Inline Code</h2>
 <p>Usually results are “hard coded” into the text of a write-up, we manually type them in.</p>
 <p>If the dataset changes we’d have to go back to every instance of that reporting and change them manually, which is laborious and error-prone (how often have you mis-remembered or mis-typed a number?)</p>
 <p>We can instead use inline code to automatically place data (such as sample size, mean) into the text! Any code output can be placed as inline code.</p>
@@ -551,14 +543,14 @@ cols(
 <p>The squareroot of 2 is 1.4142136</p>
 <p>🎬 To summarise our data we can add this code chunk to define the variable <code>n_coelebs</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="in">n_coelebs &lt;- chaff_summary$n[chaff_summary$subspecies == "coelebs"]</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode markdown cell-code"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="in">n_coelebs &lt;- chaff_summary$n[chaff_summary$subspecies == &quot;coelebs&quot;]</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 <p>🎬 And then add that to the text as follows:</p>
-<p>We sampled `r <code>n_coelebs</code>` *F. c.&nbsp;coelebs*&nbsp;males.</p>
+<p>We sampled `r <code>n_coelebs</code>` *F. c. coelebs* males.</p>
 <p>🎬 Then hit Render (Ctrl+Shift+K) and it will display as:</p>
-<p>We sampled 20 <em>F. c.&nbsp;coelebs</em> males.</p>
+<p>We sampled 20 <em>F. c. coelebs</em> males.</p>
 </section>
 </section>
 <section id="figures" class="level1">
@@ -566,34 +558,34 @@ cols(
 <p>Now let’s try and insert a graph.</p>
 <p>🎬 Add a code chunk to the Results section with:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb24"><pre class="sourceCode markdown cell-code"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-chaff</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Mass of Chaffinches"</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: &quot;Mass of Chaffinches&quot;</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot() +</span></span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point(data = chaff, aes(x = subspecies, y = mass),</span></span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="in">             position = position_jitter(width = 0.1, height = 0),</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="in">             colour = "gray50") +</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="in">             colour = &quot;gray50&quot;) +</span></span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_errorbar(data = chaff_summary, </span></span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="in">                aes(x = subspecies, ymin = mean - se, ymax = mean + se),</span></span>
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="in">                width = 0.3) +</span></span>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_errorbar(data = chaff_summary, </span></span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="in">                aes(x = subspecies, ymin = mean, ymax = mean),</span></span>
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="in">                width = 0.2) +</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_continuous(name = "Mass (g)", </span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_y_continuous(name = &quot;Mass (g)&quot;, </span></span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="in">                     limits = c(0, 30), </span></span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="in">                     expand = c(0, 0)) +</span></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_discrete(name = "Subspecies", </span></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="in">                   labels = c("Canariensis", "Coelebs")) +</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_discrete(name = &quot;Subspecies&quot;, </span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="in">                   labels = c(&quot;Canariensis&quot;, &quot;Coelebs&quot;)) +</span></span>
 <span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="in">  theme_classic()</span></span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <div class="cell-output-display">
-<div id="fig-chaff" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-chaff" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-chaff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-chaff-1.png" class="img-fluid figure-img" width="672">
+<img src="index_files/figure-html/fig-chaff-1.png" class="img-fluid" width="672" />
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chaff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Mass of Chaffinches
+Figure 1: Mass of Chaffinches
 </figcaption>
 </figure>
 </div>
@@ -602,15 +594,15 @@ Figure&nbsp;1: Mass of Chaffinches
 <p>🎬 Render (Ctrl+Shift+K)</p>
 <p>Note how it is automatically labelled as Figure 1! Quarto will automatically number tables and figures for you.</p>
 <section id="cross-referencing-figures" class="level2">
-<h2 class="anchored" data-anchor-id="cross-referencing-figures">Cross-referencing Figures</h2>
+<h2>Cross-referencing Figures</h2>
 <p>Remember how we are labelling our code chunks?</p>
 <p>The label of the code chunk is important when creating figures because it is used to cross reference the figure in the text. We give cross references with <code>@</code> followed by the label of the code chunk.</p>
 <p>That is starts with a <code>fig-</code> prefix also matters - this is what determines what is treated as a figure numbered in order of appearance.</p>
 <p>🎬 If we add “See <code>@fig-chaff</code>” to our text and hit Render it’ll display as:</p>
-<p>See <a href="#fig-chaff" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>See <a href="#fig-chaff" class="quarto-xref">Figure 1</a>.</p>
 </section>
 <section id="figure-legends" class="level2">
-<h2 class="anchored" data-anchor-id="figure-legends">Figure legends</h2>
+<h2>Figure legends</h2>
 <p>There are two ways to add a legend:</p>
 <ol type="1">
 <li>Add the <code>fig-cap</code> chunk option: <code>fig-cap: "Mass of chaffinches"</code> to the code chunk.</li>
@@ -630,19 +622,28 @@ Figure&nbsp;1: Mass of Chaffinches
 <p>There are several ways to add tables to a document. We will use the <code>knitr::kable()</code> function to create a table from a data frame or the summary information</p>
 <p>🎬 Add a table of the summary information for the chaffinch data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode markdown cell-code"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: tbl-chaff</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="in">chaff_summary |&gt; </span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="in">  knitr::kable(caption = "Summary of mass(g) for the two subspecies of chaffinch.", col.names = names(chaff_summary) |&gt; str_to_sentence())</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-chaff" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="in">  knitr::kable(caption = &quot;Summary of mass(g) for the two subspecies of chaffinch.&quot;, col.names = names(chaff_summary) |&gt; str_to_sentence())</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: &#39;xfun::attr()&#39; is deprecated.
+Use &#39;xfun::attr2()&#39; instead.
+See help(&quot;Deprecated&quot;)
+
+Warning: &#39;xfun::attr()&#39; is deprecated.
+Use &#39;xfun::attr2()&#39; instead.
+See help(&quot;Deprecated&quot;)</code></pre>
+</div>
+<div id="tbl-chaff" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-chaff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Summary of mass(g) for the two subspecies of chaffinch.
+Table 1: Summary of mass(g) for the two subspecies of chaffinch.
 </figcaption>
 <div aria-describedby="tbl-chaff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Subspecies</th>
@@ -675,40 +676,49 @@ Table&nbsp;1: Summary of mass(g) for the two subspecies of chaffinch.
 </div>
 </div>
 <section id="crossreferencing-tables" class="level2">
-<h2 class="anchored" data-anchor-id="crossreferencing-tables">Crossreferencing Tables</h2>
+<h2>Crossreferencing Tables</h2>
 <p>Just as the <code>fig-</code> prefix matters for corrected numbering of figures, the <code>tbl-</code> prefix is important for the corrected numbering of figures.</p>
 <p>Just as the label of the code chunk is important for cross referencing of figures so it is for tables and we use <code>@</code> followed by the label of the code chunk to cross reference the table in the text.</p>
 <p>🎬 If we add “See <code>@tbl-chaff</code>” to our text and hit Render it’ll display as:</p>
-<p>See <a href="#tbl-chaff" class="quarto-xref">Table&nbsp;1</a>.</p>
+<p>See <a href="#tbl-chaff" class="quarto-xref">Table 1</a>.</p>
 </section>
 <section id="tables---improve-format" class="level2">
-<h2 class="anchored" data-anchor-id="tables---improve-format">Tables - improve format</h2>
+<h2>Tables - improve format</h2>
 <p>There’s a lot of decimal places here that we can cut down. They can be set in two ways:</p>
 <ol type="1">
 <li><p>in the table by adding <code>digits = 2</code> to the <code>kable()</code> function</p></li>
 <li><p>For the document overall by adding this to the chunk:</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="in">options(digits = 2)</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode markdown cell-code"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="in">options(digits = 2)</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 <p>🎬 Let’s try the second option with this chunk:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: tbl-chaff2</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="in">options(digits = 2)</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="in">chaff_summary |&gt; </span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="in">  knitr::kable(caption = "Summary of mass(g) for the two subspecies of chaffinch.", col.names = names(chaff_summary) |&gt; str_to_sentence())</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-chaff2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
+<div class="sourceCode" id="cb28"><pre class="sourceCode markdown cell-code"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: tbl-chaff2</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="in">options(digits = 2)</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="in">chaff_summary |&gt; </span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="in">  knitr::kable(caption = &quot;Summary of mass(g) for the two subspecies of chaffinch.&quot;, col.names = names(chaff_summary) |&gt; str_to_sentence())</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: &#39;xfun::attr()&#39; is deprecated.
+Use &#39;xfun::attr2()&#39; instead.
+See help(&quot;Deprecated&quot;)
+
+Warning: &#39;xfun::attr()&#39; is deprecated.
+Use &#39;xfun::attr2()&#39; instead.
+See help(&quot;Deprecated&quot;)</code></pre>
+</div>
+<div id="tbl-chaff2" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-chaff2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Summary of mass(g) for the two subspecies of chaffinch.
+Table 2: Summary of mass(g) for the two subspecies of chaffinch.
 </figcaption>
 <div aria-describedby="tbl-chaff2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Subspecies</th>
@@ -755,7 +765,7 @@ Table&nbsp;2: Summary of mass(g) for the two subspecies of chaffinch.
 <section id="citations" class="level1">
 <h1>Citations</h1>
 <section id="package-citations" class="level2">
-<h2 class="anchored" data-anchor-id="package-citations">Package citations</h2>
+<h2>Package citations</h2>
 <p>You can add citations for R and packages, from doi, from a .bib file, or from zotero.</p>
 <p>🎬 Put your cursor where you want the citation to go and click the <code>Insert</code> button in the top right and select <code>Citation</code> (Ctrl-Shift-F8) and add a citation for the <code>tidverse</code> package.</p>
 <p>🎬 Render</p>
@@ -766,7 +776,7 @@ Table&nbsp;2: Summary of mass(g) for the two subspecies of chaffinch.
 </ul>
 </section>
 <section id="citations-from-doi" class="level2">
-<h2 class="anchored" data-anchor-id="citations-from-doi">Citations from DOI</h2>
+<h2>Citations from DOI</h2>
 <p>🎬 Put your cursor where you want the citation to go and click the <code>Insert</code> button in the top right and select <code>Citation</code> (Ctrl-Shift-F8) Select From DOI and paste in 10.1016/j.ympev.2009.07.018</p>
 <p>🎬 Render</p>
 <p>You can also add citations to the .bib file manually.</p>
@@ -783,11 +793,23 @@ Table&nbsp;2: Summary of mass(g) for the two subspecies of chaffinch.
 <li>Figures, tables, images, and equations can be automatically numbered and cross-referenced using labels (e.g., fig-, tbl-).</li>
 <li>You can include citations and bibliographic references directly within your document.</li>
 </ul>
-<p>Pages made with R <span class="citation" data-cites="base">(<a href="#ref-base" role="doc-biblioref">2024</a>)</span>, Quarto <span class="citation" data-cites="allaire2022">(<a href="#ref-allaire2022" role="doc-biblioref">Allaire et al. 2022</a>)</span>, knitr <span class="citation" data-cites="knitr">(<a href="#ref-knitr" role="doc-biblioref">Xie 2023</a>)</span>, kableExtra <span class="citation" data-cites="kableExtra">(<a href="#ref-kableExtra" role="doc-biblioref">Zhu 2024</a>)</span></p>
-
 </section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<section id="what-else-can-i-do" class="level1">
+<h1>What Else Can I Do?</h1>
+<ul>
+<li>Alter the formatting of your content with to create <a href="https://quarto.org/docs/authoring/figures.html#figure-panels">panel figure</a> or <a href="https://quarto.org/docs/authoring/figures.html#caption-locations">change figure legend locations</a></li>
+<li>Make a <a href="https://quarto.org/docs/websites/">website</a> with multiple pages<br />
+</li>
+<li>Make a <a href="https://quarto.org/docs/presentations/">presentation</a> in visualjs, pptx, or pdf format<br />
+</li>
+<li>Make a <a href="https://quarto.org/docs/dashboards/">dashboard</a> for interactive and informative data reporting<br />
+</li>
+<li>Create a <a href="https://quarto.org/docs/manuscripts/index.html">manuscript</a> for publication-ready papers</li>
+<li>Integrate Google Sheets, create a book, embed interactive maps and lots, lots more! Check out the <a href="https://quarto.org/docs/guide/">Quarto guide</a> to find out more (and maybe get some inspiration!)</li>
+</ul>
+<p><strong>Good luck on your Quarto adventures!</strong></p>
+<p>Pages made with R <span class="citation" data-cites="base">(<a href="#ref-base" role="doc-biblioref">2024</a>)</span>, Quarto <span class="citation" data-cites="allaire2022">(<a href="#ref-allaire2022" role="doc-biblioref">Allaire et al. 2022</a>)</span>, knitr <span class="citation" data-cites="knitr">(<a href="#ref-knitr" role="doc-biblioref">Xie 2023</a>)</span>, kableExtra <span class="citation" data-cites="kableExtra">(<a href="#ref-kableExtra" role="doc-biblioref">Zhu 2024</a>)</span></p>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-allaire2022" class="csl-entry" role="listitem">
 Allaire, J. J., Charles Teague, Yihui Xie, and Christophe Dervieux. 2022. <span>“Quarto,”</span> January. <a href="https://doi.org/10.5281/ZENODO.5960048">https://doi.org/10.5281/ZENODO.5960048</a>.
 </div>
@@ -803,9 +825,12 @@ Xie, Yihui. 2023. <span>“Knitr: A General-Purpose Package for Dynamic Report G
 <div id="ref-kableExtra" class="csl-entry" role="listitem">
 Zhu, Hao. 2024. <span>“kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax.”</span> <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
 </div>
-</div></section></div></main>
+</div>
+</section>
+
+</main>
 <!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1224,7 +1249,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
+</body>
 
-
-
-</body></html>
+</html>
