@@ -16,5 +16,5 @@
 
 /* Push document content down so it is not hidden behind the header */
 body {
-  padding-top: calc(3rem + 24px); /* font-size + padding top+bottom */
+  padding-top: calc(3rem + 36px); /* font-size + padding top+bottom */
 }

@@ -20,7 +20,7 @@ https://tinyurl.com/QuartoBES
 
 # Housekeeping
 
-This tutorial is available as a webpage here: [github](githublink.com)./
+This tutorial is available as a webpage here: [github](https://ukri-digital-research-skills-catalyst.github.io/quartoWorkshopBES2025).\
 If you don't have R Studio installed or working, no problem! It's also
 available as a positcloud instance: [positcloud](positcloudlink.com).
 
@@ -152,16 +152,16 @@ to whichever format the journal requires.
 +------------------------+-----------------------------+
 | Markdown Syntax        | Output                      |
 +========================+=============================+
-| ``` markdown           | [                           |
-| [Quar                  | Quarto](https://quarto.org) |
+| ``` markdown           |                             |
+| [Quar                  |[Quarto](https://quarto.org) |
 | t                      |                             |
 | o](https://quarto.org) |                             |
 | ```                    |                             |
 +------------------------+-----------------------------+
-| ``` markdown           | !                           |
-| ![Cap                  | [Caption](images/chaff.jpg) |
-| t                      |                             |
-| ion](images/chaff.jpg) |                             |
+| ``` markdown           |                             |
+| ![Caption]             |![Caption](images/chaff.jpg) |
+|                        |                             |
+|     (images/chaff.jpg) |                             |
 | ```                    |                             |
 +------------------------+-----------------------------+
 
