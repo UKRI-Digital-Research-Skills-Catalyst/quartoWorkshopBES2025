@@ -1,0 +1,23 @@
+/* Persistent top bar */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  padding: 6px 14px;
+  z-index: 9999;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+  /* Increase text size */
+  font-size: 2rem;  /* Change this value as needed */
+}
+
+/* Push document content down so header doesn’t overlap */
+body {
+  padding-top: 48px;
+}
