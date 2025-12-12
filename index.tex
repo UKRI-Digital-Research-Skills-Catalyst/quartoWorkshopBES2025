@@ -1,0 +1,1174 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Reproducible and Automated Reporting with Quarto},
+  pdfauthor={Pasky Miranda (UKRI Digital Research Skills Catalyst)},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Reproducible and Automated Reporting with Quarto}
+\author{Pasky Miranda (UKRI Digital Research Skills Catalyst)}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+https://tinyurl.com/QuartoBES
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/catalystlogo.png}}
+
+This workshop has been developed by the
+\href{https://www.linkedin.com/company/ukri-digital-research-skills-catalyst/}{UKRI
+Digital Research Skills Catalyst}.
+
+\section{Housekeeping}\label{housekeeping}
+
+This tutorial is available as a webpage here:
+\href{https://ukri-digital-research-skills-catalyst.github.io/quartoWorkshopBES2025}{github}.\\
+If you don't have R Studio installed or working, no problem! It's also
+available as a positcloud instance:
+\href{https://posit.cloud/content/11607987}{positcloud}.
+
+If you see this emoji 🎬 then it's an instruction to do something.
+
+\section{What You'll Learn Today}\label{what-youll-learn-today}
+
+\begin{itemize}
+\tightlist
+\item
+  Markdown basics
+\item
+  How to create a Quarto document
+\item
+  What a YAML does
+\item
+  Adding content to a Quarto document
+\item
+  How to render Inline code
+\item
+  How to render Figures + tables
+\item
+  How to use Auto-renumbering
+\item
+  How to use Visual editor
+\item
+  How to add Citations
+\end{itemize}
+
+\section{What is Quarto?}\label{what-is-quarto}
+
+Quarto is a modern scientific publishing system for \textbf{dynamic,
+reproducible documents}.
+
+\begin{itemize}
+\tightlist
+\item
+  Write text + code together
+\item
+  Render to \textbf{HTML}, \textbf{PDF}, \textbf{Word}, \textbf{slides},
+  \textbf{manuscripts}, more
+\item
+  Supports R, Python, Julia, Observable
+\item
+  Like R Markdown, but more flexible + standardised
+\end{itemize}
+
+\section{Why Use Quarto?}\label{why-use-quarto}
+
+Typical write-up workflow:
+
+\begin{itemize}
+\tightlist
+\item
+  Figures/tables manually updated
+\item
+  Graphs are saved to file then inserted manually
+\item
+  Cross-references break when ordering changes
+\item
+  Reformatting for journals takes hours
+\item
+  Lots of copying/pasting
+\item
+  Lots of potential for errors
+\end{itemize}
+
+With Quarto you don't have to worry about any of these. It does the work
+for you!
+
+\subsection{Publishing}\label{publishing}
+
+To address the reproducibility crisis journals now increasingly want you
+to have your code/workbook submitted with the manuscript. Working in
+Quarto allows you have all of that all in one place, readily exportable
+to whichever format the journal requires.
+
+\subsection{Demo: Multiple Formats}\label{demo-multiple-formats}
+
+These are all the \textbf{same} \texttt{.qmd} document, just with
+different output formats:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{index.html}{HTML}
+\item
+  \href{pdf.pdf}{PDF}
+\item
+  \href{docx.docx}{Word document}
+\item
+  \href{revealjs.html}{Revealjs slide deck}
+\end{itemize}
+
+(Some tidying up may be required for certain formats, but it all can run
+from the same source document!)
+
+\section{Markdown Basics}\label{markdown-basics}
+
+\begin{itemize}
+\tightlist
+\item
+  The YAML header sets the default behaviour for the document and is
+  between \texttt{-\/-\/-} at the top of the document (more on this
+  later)
+\item
+  R Code chunks are between
+  \texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}} and
+  \texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}} and chunk
+  options, starting \texttt{\#\textbar{}}, determine how/whether they
+  run whether code/output is included in the rendered document
+\item
+  You can run code chunk interactively or through rendering
+\item
+  Comments: \texttt{\textbar{}\#}, \texttt{\#} in code chunks,
+  \texttt{\textless{}!-\/-\ in\ text\ -\/-\textgreater{}} but use
+  Ctrl+Shift+C
+\end{itemize}
+
+\subsection{Text Formatting}\label{text-formatting}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2917}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3194}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Markdown Syntax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Output
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{*italics*,**bold**}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \emph{italics}, \textbf{bold} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{***bold italics***}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \textbf{\emph{bold italics}} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{superscript\^{}2\^{}}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & superscript\textsuperscript{2} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{subscript\textasciitilde{}2\textasciitilde{}}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & subscript\textsubscript{2} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textasciitilde{}\textasciitilde{}strikethrough\textasciitilde{}\textasciitilde{}}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \textasciitilde{}
+\textsubscript{strikethrough}\textasciitilde{} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}verbatim code\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \texttt{verbatim\ code} \\
+\end{longtable}
+
+\subsection{Headings}\label{headings}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.1944}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Markdown Syntax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Output
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\# Header 1}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\section{Header 1}\label{header-1}
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\#\# Header 2}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\subsection{Header 2}\label{header-2}
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\#\#\# Header 3}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\section{}\label{section}
+
+\subsection{Header 3}\label{header-3}
+\end{minipage} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\#\#\#\# Header 4}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\section{}\label{section-1}
+
+\section{}\label{section-2}
+
+\subsection{Header 4}\label{header-4}
+\end{minipage} \\
+\end{longtable}
+
+\subsection{Links \& Images}\label{links-images}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4306}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4306}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Markdown Syntax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Output
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{[}\OtherTok{Quarto}\CommentTok{](https://quarto.org)}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \href{https://quarto.org}{Quarto} \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\AlertTok{![Caption](images/chaff.jpg)}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/chaff.jpg}}
+
+}
+
+\caption{Caption}
+
+\end{figure}%
+\end{minipage} \\
+\end{longtable}
+
+\subsection{Equations}\label{equations}
+
+Use \texttt{\$} delimiters for inline maths and \texttt{\$\$} delimiters
+for display maths. For example:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4444}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3750}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Markdown Syntax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Output
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\AnnotationTok{inline maths:}\CommentTok{ $E = mc\^{}\{2\}$}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & inline maths: \(E=mc^{2}\) \\
+\begin{minipage}[t]{\linewidth}\raggedright
+\begin{Shaded}
+\begin{Highlighting}[]
+\AnnotationTok{display maths:}\CommentTok{ $$E = mc\^{}\{2\}$$}
+\end{Highlighting}
+\end{Shaded}
+\end{minipage} & display maths:
+
+\(E = mc^{2}\) \\
+\end{longtable}
+
+\section{Create a QMD Document}\label{create-a-qmd-document}
+
+Let's create a Quarto Document (a \texttt{.qmd} file) in RStudio!
+
+🎬 Go to File \textgreater{} New File \textgreater{} New Quarto
+Document\\
+🎬 Give your file a name\\
+🎬 Choose Engine: Knitr\\
+🎬 Turn off Visual Editor (for now! We'll learn to use Source editor
+first)\\
+🎬 Now hit Render (or Ctrl+Shift+K).\\
+
+You'll see the Rendered default document in the Viewer panel.
+
+\subsection{Some recommended RStudio
+settings}\label{some-recommended-rstudio-settings}
+
+🎬 Tools \textgreater{} Global Options\\
+- General:\\
+- Turn off the three ``Restore \ldots.'' options\\
+- Turn ``Save workspace to .RData on exit'' to Never - R Markdown:\\
+- Turn ``Show output preview in:'' to Viewer pane\\
+
+\subsection{Edit the YAML}\label{edit-the-yaml}
+
+As mentioned before, the YAML determines of the settings of the
+\texttt{.qmd} document. It is defined between \texttt{-\/-\/-} at the
+top of the document.
+
+The default YAML header will look a bit like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{{-}{-}{-}}
+\FunctionTok{title}\KeywordTok{:}\AttributeTok{ }\StringTok{"BES2025 Quarto"}
+\FunctionTok{author}\KeywordTok{:}\AttributeTok{ }\StringTok{"Santa Claus"}
+\FunctionTok{format}\KeywordTok{:}\AttributeTok{ html}
+\FunctionTok{engine}\KeywordTok{:}\AttributeTok{ knitr}
+\PreprocessorTok{{-}{-}{-}}
+\end{Highlighting}
+\end{Shaded}
+
+🎬 Feel free to edit this. Try making your own title and add yourself as
+the author.
+
+Deafult code chunk options can also be determined in the YAML:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{echo:\ false} code will not be included in output
+\item
+  \texttt{include:\ true} output will be included
+\item
+  \texttt{error:\ false} halt render if a code error occurs
+\item
+  \texttt{message:\ false} messages and warnings will not be included
+\item
+  \texttt{warning:\ false}
+\end{itemize}
+
+YAMLs can be saved as separate .YAML files and then pointed to by
+individual Quarto documents like so:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{{-}{-}{-}}
+\FunctionTok{metadata{-}files}\KeywordTok{:}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ settings.yaml}
+\PreprocessorTok{{-}{-}{-}}
+\end{Highlighting}
+\end{Shaded}
+
+Useful if you want the same formatting for multiple documents!
+
+\subsection{Adding basic content}\label{adding-basic-content}
+
+🎬 Add the code chunk below (Ctrl-Shift-I) for a simple graph, and then
+hit Render (Ctrl-Shift-K)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\InformationTok{hist(rnorm(100))}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/unnamed-chunk-1-1.pdf}}
+
+Congratulations! You've created your first Quarto content!
+
+\subsection{Loading in packages}\label{loading-in-packages}
+
+Let's try loading in an R package, in this case tidyverse (Wickham et
+al. 2019).
+
+🎬 Add this code chunk for package loading:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\InformationTok{\#| label: load{-}packages}
+\InformationTok{library(tidyverse)}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v dplyr     1.1.4     v readr     2.1.5
+v forcats   1.0.0     v stringr   1.5.1
+v ggplot2   3.5.0     v tibble    3.2.1
+v lubridate 1.9.3     v tidyr     1.3.1
+v purrr     1.0.2     
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\texttt{\#\textbar{}\ label:\ load-packages} is a code chunk label.
+These are useful (here) and essential (later) for cross-referencing.
+
+We can run individual code chunks in the R editor. This is useful for
+troubleshooting R code without having to Render every time (which can be
+lengthy with larger documents or datasets).
+
+\subsection{Loading in Data}\label{loading-in-data}
+
+Let's now try loading in some real data.
+
+🎬 Make a folder called \texttt{data-raw}\\
+🎬 Save \href{data-raw/chaff.txt}{chaff.txt} to \texttt{data-raw}\\
+🎬 Add the following code chunk and run it:\\
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\InformationTok{\#| label: import{-}data}
+\InformationTok{file \textless{}{-} "data{-}raw/chaff.txt"}
+\InformationTok{chaff \textless{}{-} read\_table(file)}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+-- Column specification --------------------------------------------------------
+cols(
+  subspecies = col_character(),
+  mass = col_double()
+)
+\end{verbatim}
+
+The data is loaded into R now. Let's now add a code chunk to summarise
+the dataset.
+
+\subsection{Data Summary}\label{data-summary}
+
+🎬 Add this data summarisation chunk and run it
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\InformationTok{\#| label: data{-}summary}
+\InformationTok{chaff\_summary \textless{}{-} chaff |\textgreater{} }
+\InformationTok{  group\_by(subspecies) |\textgreater{}  }
+\InformationTok{  summarise(mean = mean(mass, na.rm = TRUE),}
+\InformationTok{            sd = sd(mass, na.rm = TRUE),}
+\InformationTok{            n = length(mass),}
+\InformationTok{            se = sd / sqrt(n))}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+Our data is now summarised and ready to be reported in the text.
+
+\subsection{Inline Code}\label{inline-code}
+
+Usually results are ``hard coded'' into the text of a write-up, we
+manually type them in.
+
+If the dataset changes we'd have to go back to every instance of that
+reporting and change them manually, which is laborious and error-prone
+(how often have you mis-remembered or mis-typed a number?)
+
+We can instead use inline code to automatically place data (such as
+sample size, mean) into the text! Any code output can be placed as
+inline code.
+
+Inline code goes between `r` and ` .
+
+For example by writing:
+
+The squareroot of 2 is `r \texttt{sqrt(2)} `
+
+you will get:
+
+The squareroot of 2 is 1.4142136
+
+🎬 To summarise our data we can add this code chunk to define the
+variable \texttt{n\_coelebs}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\InformationTok{n\_coelebs \textless{}{-} chaff\_summary$n[chaff\_summary$subspecies == "coelebs"]}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+🎬 And then add that to the text as follows:
+
+We sampled `r \texttt{n\_coelebs}` *F. c.~coelebs*~males.
+
+🎬 Then hit Render (Ctrl+Shift+K) and it will display as:
+
+We sampled 20 \emph{F. c.~coelebs} males.
+
+\section{Figures}\label{figures}
+
+Now let's try and insert a graph.
+
+🎬 Add a code chunk to the Results section with:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\InformationTok{\#| label: fig{-}chaff}
+\InformationTok{\#| fig{-}cap: "Mass of Chaffinches"}
+\InformationTok{ggplot() +}
+\InformationTok{  geom\_point(data = chaff, aes(x = subspecies, y = mass),}
+\InformationTok{             position = position\_jitter(width = 0.1, height = 0),}
+\InformationTok{             colour = "gray50") +}
+\InformationTok{  geom\_errorbar(data = chaff\_summary, }
+\InformationTok{                aes(x = subspecies, ymin = mean {-} se, ymax = mean + se),}
+\InformationTok{                width = 0.3) +}
+\InformationTok{  geom\_errorbar(data = chaff\_summary, }
+\InformationTok{                aes(x = subspecies, ymin = mean, ymax = mean),}
+\InformationTok{                width = 0.2) +}
+\InformationTok{  scale\_y\_continuous(name = "Mass (g)", }
+\InformationTok{                     limits = c(0, 30), }
+\InformationTok{                     expand = c(0, 0)) +}
+\InformationTok{  scale\_x\_discrete(name = "Subspecies", }
+\InformationTok{                   labels = c("Canariensis", "Coelebs")) +}
+\InformationTok{  theme\_classic()}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-chaff-1.pdf}}
+
+}
+
+\caption{\label{fig-chaff}Mass of Chaffinches}
+
+\end{figure}%
+
+🎬 Render (Ctrl+Shift+K)
+
+Note how it is automatically labelled as Figure 1! Quarto will
+automatically number tables and figures for you.
+
+\subsection{Cross-referencing Figures}\label{cross-referencing-figures}
+
+Remember how we are labelling our code chunks?
+
+The label of the code chunk is important when creating figures because
+it is used to cross reference the figure in the text. We give cross
+references with \texttt{@} followed by the label of the code chunk.
+
+That is starts with a \texttt{fig-} prefix also matters - this is what
+determines what is treated as a figure numbered in order of appearance.
+
+🎬 If we add ``See \texttt{@fig-chaff}'' to our text and hit Render
+it'll display as:
+
+See Figure~\ref{fig-chaff}.
+
+\subsection{Figure legends}\label{figure-legends}
+
+There are two ways to add a legend:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Add the \texttt{fig-cap} chunk option:
+  \texttt{fig-cap:\ "Mass\ of\ chaffinches"} to the code chunk.
+\item
+  Use a div. \texttt{:::}
+\end{enumerate}
+
+Divs are more flexible:
+
+\begin{itemize}
+\tightlist
+\item
+  You can include inline code, citations, special characters and
+  formatting
+\item
+  You can more easily make multipanel figures
+\end{itemize}
+
+We won't cover Divs in this workshop, but you can find out more
+\href{https://quarto.org/docs/authoring/markdown-basics.html\#sec-divs-and-spans}{here}
+
+\section{Tables}\label{tables}
+
+Let's now add a table to our document!
+
+There are several ways to add tables to a document. We will use the
+\texttt{knitr::kable()} function to create a table from a data frame or
+the summary information
+
+🎬 Add a table of the summary information for the chaffinch data:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\InformationTok{\#| label: tbl{-}chaff}
+\InformationTok{chaff\_summary |\textgreater{} }
+\InformationTok{  knitr::kable(caption = "Summary of mass(g) for the two subspecies of chaffinch.", col.names = names(chaff\_summary) |\textgreater{} str\_to\_sentence())}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+\begin{longtable}[]{@{}lrrrr@{}}
+
+\caption{\label{tbl-chaff}Summary of mass(g) for the two subspecies of
+chaffinch.}
+
+\tabularnewline
+
+\toprule\noalign{}
+Subspecies & Mean & Sd & N & Se \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+canariensis & 22.275 & 2.150857 & 20 & 0.4809462 \\
+coelebs & 20.480 & 2.137780 & 20 & 0.4780222 \\
+
+\end{longtable}
+
+\subsection{Crossreferencing Tables}\label{crossreferencing-tables}
+
+Just as the \texttt{fig-} prefix matters for corrected numbering of
+figures, the \texttt{tbl-} prefix is important for the corrected
+numbering of figures.
+
+Just as the label of the code chunk is important for cross referencing
+of figures so it is for tables and we use \texttt{@} followed by the
+label of the code chunk to cross reference the table in the text.
+
+🎬 If we add ``See \texttt{@tbl-chaff}'' to our text and hit Render
+it'll display as:
+
+See Table~\ref{tbl-chaff}.
+
+\subsection{Tables - improve format}\label{tables---improve-format}
+
+There's a lot of decimal places here that we can cut down. They can be
+set in two ways:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  in the table by adding \texttt{digits\ =\ 2} to the \texttt{kable()}
+  function
+\item
+  For the document overall by adding this to the chunk:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\InformationTok{options(digits = 2)}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+🎬 Let's try the second option with this chunk:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\InformationTok{\#| label: tbl{-}chaff2}
+\InformationTok{options(digits = 2)}
+\InformationTok{chaff\_summary |\textgreater{} }
+\InformationTok{  knitr::kable(caption = "Summary of mass(g) for the two subspecies of chaffinch.", col.names = names(chaff\_summary) |\textgreater{} str\_to\_sentence())}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+\end{verbatim}
+
+\begin{longtable}[]{@{}lrrrr@{}}
+
+\caption{\label{tbl-chaff2}Summary of mass(g) for the two subspecies of
+chaffinch.}
+
+\tabularnewline
+
+\toprule\noalign{}
+Subspecies & Mean & Sd & N & Se \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+canariensis & 22 & 2.1 & 20 & 0.48 \\
+coelebs & 20 & 2.1 & 20 & 0.48 \\
+
+\end{longtable}
+
+Note here we have two tables now, and the table numbering is automatic!
+
+🎬 Cut the code chunk for the second table and Paste it above the first
+table. Render, and observe how the Tables are automatically renumbered!
+
+\section{The visual editor!}\label{the-visual-editor}
+
+\begin{itemize}
+\tightlist
+\item
+  The visual editor is a WYSIWYG editor for Quarto documents. It can be
+  accessed by clicking the \texttt{Visual\ Editor} button in the top
+  right or by Ctrl-Shift-F4
+\item
+  It makes it easier to add and edit content (although using source
+  editor is often best for sanity checking!)
+\item
+  It is especially useful for adding citations, especially if you use
+  zotero.
+\end{itemize}
+
+\section{Citations}\label{citations}
+
+\subsection{Package citations}\label{package-citations}
+
+You can add citations for R and packages, from doi, from a .bib file, or
+from zotero.
+
+🎬 Put your cursor where you want the citation to go and click the
+\texttt{Insert} button in the top right and select \texttt{Citation}
+(Ctrl-Shift-F8) and add a citation for the \texttt{tidverse} package.
+
+🎬 Render
+
+\begin{itemize}
+\tightlist
+\item
+  the in-text citation has been added
+\item
+  the reference has been added to the references section
+\item
+  a \texttt{references.bib} file has been created in the project folder
+\end{itemize}
+
+\subsection{Citations from DOI}\label{citations-from-doi}
+
+🎬 Put your cursor where you want the citation to go and click the
+\texttt{Insert} button in the top right and select \texttt{Citation}
+(Ctrl-Shift-F8) Select From DOI and paste in 10.1016/j.ympev.2009.07.018
+
+🎬 Render
+
+You can also add citations to the .bib file manually.
+
+\section{Summary}\label{summary}
+
+\begin{itemize}
+\tightlist
+\item
+  Quarto is a multi-language scientific publishing system for producing
+  dynamic, reproducible reports in many formats. It builds on the ideas
+  of R Markdown.
+\item
+  The YAML header stores document metadata and controls default
+  behaviour such as formatting and output options.
+\item
+  Code chunk options specify how chunks run and whether code and/or
+  output appear in the rendered document.
+\item
+  Code can be executed interactively, allowing you to explore and refine
+  analyses as you work.
+\item
+  Divs let you group sections of content and apply specific styles or
+  layout structures to them.
+\item
+  Figures, tables, images, and equations can be automatically numbered
+  and cross-referenced using labels (e.g., fig-, tbl-).
+\item
+  You can include citations and bibliographic references directly within
+  your document.
+\end{itemize}
+
+\section{What Else Can I Do?}\label{what-else-can-i-do}
+
+\begin{itemize}
+\tightlist
+\item
+  Alter the formatting of your content with to create
+  \href{https://quarto.org/docs/authoring/figures.html\#figure-panels}{panel
+  figure} or
+  \href{https://quarto.org/docs/authoring/figures.html\#caption-locations}{change
+  figure legend locations}
+\item
+  Make a \href{https://quarto.org/docs/websites/}{website} with multiple
+  pages\\
+\item
+  Make a \href{https://quarto.org/docs/presentations/}{presentation} in
+  visualjs, pptx, or pdf format\\
+\item
+  Make a \href{https://quarto.org/docs/dashboards/}{dashboard} for
+  interactive and informative data reporting\\
+\item
+  Create a
+  \href{https://quarto.org/docs/manuscripts/index.html}{manuscript} for
+  publication-ready papers
+\item
+  Integrate Google Sheets, create a book, embed interactive maps and
+  lots, lots more! Check out the
+  \href{https://quarto.org/docs/guide/}{Quarto guide} to find out more
+  (and maybe get some inspiration!)
+\end{itemize}
+
+\textbf{Good luck on your Quarto adventures!}
+
+Pages made with R (2024), Quarto (Allaire et al. 2022), knitr (Xie
+2023), kableExtra (Zhu 2024)
+
+\section{Want to gain more skills?}\label{want-to-gain-more-skills}
+
+The UKRI Digital Research Skills Catalyst will be launching the Catalyst
+Portal in early 2026!
+
+Featuring:
+
+\begin{itemize}
+\tightlist
+\item
+  a huge repertoire of in-person and online training (both tutor-led and
+  self-study)\\
+\item
+  a \textbf{free} 1-to-1 expert consultancy service\\
+\item
+  access to a calendar full of training and development events across
+  the UK\\
+\end{itemize}
+
+Follow us on
+\href{https://www.linkedin.com/company/ukri-digital-research-skills-catalyst/}{LinkedIn}
+or
+\href{https://bsky.app/profile/ukriskillscatalyst.bsky.social}{Bluesky}
+to be informed as soon as the Portal launches!
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-allaire2022}
+Allaire, J. J., Charles Teague, Yihui Xie, and Christophe Dervieux.
+2022. {``Quarto,''} January.
+\url{https://doi.org/10.5281/ZENODO.5960048}.
+
+\bibitem[\citeproctext]{ref-base}
+R Core Team. 2024. {``R: A Language and Environment for Statistical
+Computing.''} \url{https://www.R-project.org/}.
+
+\bibitem[\citeproctext]{ref-tidyverse}
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy
+D'Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.
+{``Welcome to the {\textbraceleft}Tidyverse{\textbraceright}''} 4: 1686.
+\url{https://doi.org/10.21105/joss.01686}.
+
+\bibitem[\citeproctext]{ref-knitr}
+Xie, Yihui. 2023. {``Knitr: A General-Purpose Package for Dynamic Report
+Generation in r.''} \url{https://yihui.org/knitr/}.
+
+\bibitem[\citeproctext]{ref-kableExtra}
+Zhu, Hao. 2024. {``kableExtra: Construct Complex Table with 'Kable' and
+Pipe Syntax.''} \url{https://CRAN.R-project.org/package=kableExtra}.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}

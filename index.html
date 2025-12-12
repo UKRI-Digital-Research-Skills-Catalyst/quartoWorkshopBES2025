@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Pasky Miranda">
+<meta name="author" content="Pasky Miranda (UKRI Digital Research Skills Catalyst)">
 
 <title>Reproducible and Automated Reporting with Quarto</title>
 <style>
@@ -141,10 +141,8 @@ window.Quarto = {
   <li><a href="#markdown-basics" id="toc-markdown-basics" class="nav-link" data-scroll-target="#markdown-basics">Markdown Basics</a>
   <ul class="collapse">
   <li><a href="#text-formatting" id="toc-text-formatting" class="nav-link" data-scroll-target="#text-formatting">Text Formatting</a></li>
-  <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings">Headings</a>
-  <ul class="collapse">
+  <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings">Headings</a></li>
   <li><a href="#links-images" id="toc-links-images" class="nav-link" data-scroll-target="#links-images">Links &amp; Images</a></li>
-  </ul></li>
   <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations">Equations</a></li>
   </ul></li>
   <li><a href="#create-a-qmd-document" id="toc-create-a-qmd-document" class="nav-link" data-scroll-target="#create-a-qmd-document">Create a QMD Document</a>
@@ -175,8 +173,9 @@ window.Quarto = {
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#what-else-can-i-do" id="toc-what-else-can-i-do" class="nav-link" data-scroll-target="#what-else-can-i-do">What Else Can I Do?</a></li>
+  <li><a href="#want-to-gain-more-skills" id="toc-want-to-gain-more-skills" class="nav-link" data-scroll-target="#want-to-gain-more-skills">Want to gain more skills?</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="revealjs.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="docx.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="revealjs.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="pdf.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="docx.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -192,7 +191,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Pasky Miranda </p>
+             <p>Pasky Miranda (UKRI Digital Research Skills Catalyst) </p>
           </div>
   </div>
     
@@ -208,6 +207,8 @@ window.Quarto = {
 <div class="top-header">
 <p>https://tinyurl.com/QuartoBES</p>
 </div>
+<p><img src="images/catalystlogo.png" class="img-fluid"></p>
+<p>This workshop has been developed by the <a href="https://www.linkedin.com/company/ukri-digital-research-skills-catalyst/">UKRI Digital Research Skills Catalyst</a>.</p>
 <section id="housekeeping" class="level1">
 <h1>Housekeeping</h1>
 <p>This tutorial is available as a webpage here: <a href="https://ukri-digital-research-skills-catalyst.github.io/quartoWorkshopBES2025">github</a>.<br>
@@ -256,13 +257,14 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </section>
 <section id="demo-multiple-formats" class="level2">
 <h2 class="anchored" data-anchor-id="demo-multiple-formats">Demo: Multiple Formats</h2>
-<p>These are all the <strong>same</strong> <code>.qmd</code> document, just with different outputs:</p>
+<p>These are all the <strong>same</strong> <code>.qmd</code> document, just with different output formats:</p>
 <ul>
 <li><a href="index.html">HTML</a></li>
-<li>PDF</li>
+<li><a href="pdf.pdf">PDF</a></li>
 <li><a href="docx.docx">Word document</a></li>
 <li><a href="revealjs.html">Revealjs slide deck</a></li>
 </ul>
+<p>(Some tidying up may be required for certain formats, but it all can run from the same source document!)</p>
 </section>
 </section>
 <section id="markdown-basics" class="level1">
@@ -278,7 +280,7 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 <table class="caption-top table">
 <colgroup>
 <col style="width: 29%">
-<col style="width: 29%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -292,8 +294,7 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 <td><em>italics</em>, <strong>bold</strong></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>*</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>**bold italics ***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>***bold italics***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><strong><em>bold italics</em></strong></td>
 </tr>
 <tr class="odd">
@@ -306,7 +307,7 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </tr>
 <tr class="odd">
 <td><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>~~strikethrough~~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><del>strikethrough</del></td>
+<td>~ <sub>strikethrough</sub>~</td>
 </tr>
 <tr class="even">
 <td><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">`verbatim code`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
@@ -319,7 +320,7 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 <h2 class="anchored" data-anchor-id="headings">Headings</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
+<col style="width: 55%">
 <col style="width: 22%">
 </colgroup>
 <thead>
@@ -339,16 +340,20 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </tr>
 <tr class="odd">
 <td><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Header 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h3 id="header-3" class="anchored">Header 3</h3></td>
+<td><h1 id="section"></h1>
+<h2 id="header-3" class="anchored">Header 3</h2></td>
 </tr>
 <tr class="even">
 <td><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Header 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h4 id="header-4" class="anchored">Header 4</h4></td>
+<td><h1 id="section-1"></h1>
+<h1 id="section-2"></h1>
+<h2 id="header-4" class="anchored">Header 4</h2></td>
 </tr>
 </tbody>
 </table>
-<section id="links-images" class="level3">
-<h3 class="anchored" data-anchor-id="links-images">Links &amp; Images</h3>
+</section>
+<section id="links-images" class="level2">
+<h2 class="anchored" data-anchor-id="links-images">Links &amp; Images</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -358,15 +363,11 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>[Quar</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>t</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>o](https://quarto.org)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><a href="https://quarto.org">Quarto</a></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Caption</span><span class="co">]</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">    (images/chaff.jpg)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Caption](images/chaff.jpg)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/chaff.jpg" class="img-fluid figure-img"></p>
@@ -377,14 +378,13 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </tbody>
 </table>
 </section>
-</section>
 <section id="equations" class="level2">
 <h2 class="anchored" data-anchor-id="equations">Equations</h2>
 <p>Use <code>$</code> delimiters for inline maths and <code>$$</code> delimiters for display maths. For example:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 36%">
-<col style="width: 36%">
+<col style="width: 44%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -394,16 +394,11 @@ If you don’t have R Studio installed or working, no problem! It’s also avail
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>in</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>l</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>ine maths: $E = mc^{2}$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="an">inline maths:</span><span class="co"> $E = mc^{2}$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>inline maths: <span class="math inline">\(E=mc^{2}\)</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="an">display maths:</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>$$E = mc^{2}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="an">display maths:</span><span class="co"> $$E = mc^{2}$$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><p>display maths:</p>
 <p><span class="math display">\[E = mc^{2}\]</span></p></td>
 </tr>
@@ -816,6 +811,20 @@ Table&nbsp;2: Summary of mass(g) for the two subspecies of chaffinch.
 </ul>
 <p><strong>Good luck on your Quarto adventures!</strong></p>
 <p>Pages made with R <span class="citation" data-cites="base">(<a href="#ref-base" role="doc-biblioref">2024</a>)</span>, Quarto <span class="citation" data-cites="allaire2022">(<a href="#ref-allaire2022" role="doc-biblioref">Allaire et al. 2022</a>)</span>, knitr <span class="citation" data-cites="knitr">(<a href="#ref-knitr" role="doc-biblioref">Xie 2023</a>)</span>, kableExtra <span class="citation" data-cites="kableExtra">(<a href="#ref-kableExtra" role="doc-biblioref">Zhu 2024</a>)</span></p>
+</section>
+<section id="want-to-gain-more-skills" class="level1">
+<h1>Want to gain more skills?</h1>
+<p>The UKRI Digital Research Skills Catalyst will be launching the Catalyst Portal in early 2026!</p>
+<p>Featuring:</p>
+<ul>
+<li>a huge repertoire of in-person and online training (both tutor-led and self-study)<br>
+</li>
+<li>a <strong>free</strong> 1-to-1 expert consultancy service<br>
+</li>
+<li>access to a calendar full of training and development events across the UK<br>
+</li>
+</ul>
+<p>Follow us on <a href="https://www.linkedin.com/company/ukri-digital-research-skills-catalyst/">LinkedIn</a> or <a href="https://bsky.app/profile/ukriskillscatalyst.bsky.social">Bluesky</a> to be informed as soon as the Portal launches!</p>
 
 </section>
 
