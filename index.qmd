@@ -473,13 +473,12 @@ You can also add citations to the .bib file manually.
 -   The YAML header stores document metadata and controls default behaviour such as formatting and output options.
 -   Code chunk options specify how chunks run and whether code and/or output appear in the rendered document.
 -   Code can be executed interactively, allowing you to explore and refine analyses as you work.
--   Divs let you group sections of content and apply specific styles or layout structures to them.
 -   Figures, tables, images, and equations can be automatically numbered and cross-referenced using labels (e.g., fig-, tbl-).
 -   You can include citations and bibliographic references directly within your document.
 
 # What Else Can I Do?
 
--   Alter the formatting of your content with to create [panel figure](https://quarto.org/docs/authoring/figures.html#figure-panels) or [change figure legend locations](https://quarto.org/docs/authoring/figures.html#caption-locations)
+-   Alter the formatting of your content with Divs to create [panel figure](https://quarto.org/docs/authoring/figures.html#figure-panels) or [change figure legend locations](https://quarto.org/docs/authoring/figures.html#caption-locations)
 -   Make a [website](https://quarto.org/docs/websites/) with multiple pages\
 -   Make a [presentation](https://quarto.org/docs/presentations/) in visualjs, pptx, or pdf format\
 -   Make a [dashboard](https://quarto.org/docs/dashboards/) for interactive and informative data reporting\
